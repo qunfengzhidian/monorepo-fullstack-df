@@ -1,4 +1,6 @@
-export type { Database, Json } from './database.types'
+import type { Database, Json } from './database.types'
+
+export type { Database, Json }
 
 // Convenience type helpers
 export type Tables<T extends keyof Database['public']['Tables']> =
