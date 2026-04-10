@@ -6,8 +6,6 @@ import Link from 'next/link'
 import { Button, FormField, Card, CardContent, CardHeader, CardTitle, CardDescription } from '@repo/ui'
 import { createClient } from '../../lib/supabase/client'
 
-const supabase = createClient()
-
 export default function LoginPage() {
   const router = useRouter()
   const [email, setEmail] = useState('test@example.com')
@@ -20,6 +18,7 @@ export default function LoginPage() {
     setLoading(true)
     setError(null)
     try {
+      const supabase = createClient()
       const { error } = await supabase.auth.signInWithPassword({ email, password })
       if (error) {
         setError(error.message)
