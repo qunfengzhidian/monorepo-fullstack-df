@@ -27,6 +27,10 @@ create policy "Users can update their own profile"
   on public.profiles for update
   using (auth.uid() = id);
 
+create policy "Service role can insert profiles"
+  on public.profiles for insert
+  with check (true);
+
 -- Auto-create profile on signup
 create or replace function public.handle_new_user()
 returns trigger as $$
