@@ -9,9 +9,9 @@ dist
 out
 
 # Environment
-.env
-.env.local
-.env.*.local
+# .env
+# .env.local
+# .env.*.local
 
 # Supabase
 supabase/.branches
